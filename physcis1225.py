@@ -62,8 +62,8 @@ for thickness_1 in thicknesses_1:  # 遍歷不同的銅板厚度值
     # 根據力學公式計算位移、速度與力學能
     displacement_values = amplitude_1 * np.exp(-b_value * time_values) * np.cos(2 * np.pi * time_values / T(mass_1))
     velocity_values = (
-        -amplitude_1 * np.exp(-b_value * time_values) *
-        (-b_value * np.cos(((spring_constant_1 / mass_1) ** 0.5) * time_values) -
+        amplitude_1 * np.exp(-b_value * time_values) *
+        (-b_value * np.cos(((spring_constant_1 / mass_1) ** 0.5) * time_values) +
          ((spring_constant_1 / mass_1) ** 0.5) * np.sin(((spring_constant_1 / mass_1) ** 0.5) * time_values))
     )
     energy_k = 0.5 * mass_1 * (velocity_values ** 2)  # 動能
