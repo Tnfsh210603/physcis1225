@@ -13,7 +13,7 @@ st.text("不考慮震幅過大導致物體與銅板產生碰撞的情況。")  #
 
 # 使用者輸入
 mass = st.slider('質量 (kg)', min_value=0.1, max_value=0.25, value=0.1, step=0.01)  # 透過滑桿讓使用者選擇物體的質量
-amplitude = st.slider('原始震幅 (m)', min_value=0.01, max_value=0.1, value=0.005, step=0.01)  # 透過滑桿設定初始震幅
+amplitude = st.slider('原始震幅 (m)', min_value=0.005, max_value=0.1, value=0.005, step=0.001, format="%.3f")  # 透過滑桿設定初始震幅
 height = st.slider('高度 (m)', min_value=0.01, max_value=0.08, value=0.01, step=0.01)  # 透過滑桿選擇物體與銅板的初始距離
 spring_constant = st.slider('彈力常數 (N/m)', min_value=10, max_value=20, value=10, step=1)  # 設定彈簧的彈力常數
 
@@ -45,7 +45,7 @@ st.subheader("力學能衰減-銅板厚度")  # 顯示子標題，介紹第二�
 
 # 再次定義阻尼係數公式
 mass_1 = st.slider('質量 (kg)', min_value=0.1, max_value=0.25, value=0.1, step=0.01, key='mass_1')  # 質量滑桿，影響力學能計算
-amplitude_1 = st.slider('原始震幅 (m)', min_value=0.01, max_value=0.1, value=0.01, step=0.01, key='amplitude_1')  # 初始震幅滑桿
+amplitude_1 = st.slider('原始震幅 (m)', min_value=0.005, max_value=0.1, value=0.005, step=0.001, key='amplitude_1', format="%.3f")  # 初始震幅滑桿
 height_1 = st.slider('高度 (m)', min_value=0.01, max_value=0.08, value=0.01, step=0.01, key='height_1')  # 高度滑桿
 spring_constant_1 = st.slider('彈力常數 (N/m)', min_value=10, max_value=20, value=10, step=1, key='spring_constant_1')  # 彈簧常數滑桿
 thicknesses_1 = [2, 4, 6, 8, 10]  # 不同的銅板厚度值，用於比較
@@ -81,4 +81,3 @@ ax2.set_title('Simulated Dynamics of Mechanical Energy Attenuation at Varying Th
 ax2.legend()  # 顯示圖例
 ax2.grid(True)  # 顯示網格線
 st.pyplot(fig2)  # 使用 Streamlit 在網頁上顯示第二個圖表
-
