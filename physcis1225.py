@@ -6,7 +6,7 @@ import streamlit as st
 
 
 # Streamlit 標題
-st.header("從阻尼震盪到數據預測：銅金屬渦電流與磁阻尼機制的動力學研究")  # 顯示整個頁面的主標題，說明研究主題
+st.header("科展")  # 顯示整個頁面的主標題，說明研究主題
 
 
 # Streamlit 敘述
